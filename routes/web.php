@@ -26,5 +26,10 @@ Route::get('/trade', function () {
 });
 
 //WITH CONTROLLER
-Route::get('/item/{id}', 'ItemsController@index');
+Route::resource('item', 'ItemsController');
+
+// Route::get('/item/{id}', 'ItemsController@index'); //working with id
 // Route::get('/item', 'ItemsController@index'); // working without id
+
+Route::get('/createItem', 'ItemsController@create');
+Route::get('/item/{id}', 'PostsController@show');

@@ -23,7 +23,7 @@ class ItemsController extends Controller
      */
     public function create()
     {
-        //
+        return view('items/createItem');
     }
 
     /**
@@ -45,7 +45,8 @@ class ItemsController extends Controller
      */
     public function show($id)
     {
-        //
+      return view('/items/showItem')->with('id',$id);
+        // return "Show method " . $id;
     }
 
     /**
