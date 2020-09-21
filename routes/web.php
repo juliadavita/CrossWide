@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controller;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,3 +24,7 @@ Route::get('/wanteditems', function () {
 Route::get('/trade', function () {
     return view('trade');
 });
+
+//WITH CONTROLLER
+Route::get('/item/{id}', 'ItemsController@index');
+// Route::get('/item', 'ItemsController@index'); // working without id
