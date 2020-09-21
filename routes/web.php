@@ -25,6 +25,8 @@ Route::get('/trade', function () {
     return view('trade');
 });
 
+
+
 //WITH CONTROLLER
 Route::resource('item', 'ItemsController');
 
