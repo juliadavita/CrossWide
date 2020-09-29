@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    CrossWide
+                    CrossWide yeet
                 </div>
 
                 <div class="links">
