@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateItemsTable extends Migration
+class AddIsAdminColumnToItemsTables extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,8 @@ class CreateItemsTable extends Migration
      */
     public function up()
     {
-        Schema::create('items', function (Blueprint $table) {
-            $table->id();
-            $table->string('title');
-            $table->text('body');
-            $table->integer('category_id')->nullable()->unsigned();
-            $table->timestamps();
+        Schema::table('items', function (Blueprint $table) {
+            $table->tinyInteger('is_admin')->default('0');
         });
     }
 
@@ -29,6 +25,8 @@ class CreateItemsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('items');
+        Schema::table('items', function (Blueprint $table) {
+            $table->dropColumn('is_admin');
+        });
     }
 }
